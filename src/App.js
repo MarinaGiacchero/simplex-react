@@ -18,7 +18,7 @@ import { graficoFinal } from "./action/grafico";
       ])
       return (
         <div className="App">
-          <header className="App-header">
+          <header className="header">
             <div className="container-logo">
             <p className='texto-header'>Suporte</p>
             <p className='texto-header'>Api</p>
@@ -38,28 +38,58 @@ import { graficoFinal } from "./action/grafico";
          
           </header>
             <div className="body">
-            <div class="container-imagem_ampliada">
+            <div class="container_secao">
         <p class="texto_ampliada1"> 
         Os objetivos do estudo são propor e desenvolver a visualização de dados sobre Medidas Provisórias, aplicando conceitos computacionais para propor uma solução criativa e inovadora, tendo como foco o desenvolvimento de uma aplicação que incentive a participação cidadã na administração pública.
         </p>
         <div class="processamento_ampliado">
           <p class="texto_ampliada2">Onde nos baseamos?</p>
           <p class="texto_ampliada3">Entre no site oficial do governo para mais detalhes das medidas provisórias.</p>
-          </div> 
-            
+          </div>   
         </div>
 
-            <div>
-              <Chart
-                width={'500px'}
-                height={'300px'}
+        <div class="container-imagem_ampliada">
+        <p class="texto_ampliada1"> 
+        Aqui terá detalhes sobre o gráfico e a visualização de dados dispobilizada como API.
+        </p>
+        <div class="processamento_ampliado">
+        <div className='espaco-top'>
+              <Chart className='grafico1'
                 chartType={graficoFinal} 
                 data={data}
                 options={options}
               />
               
                    </div>
-                  
+          </div> 
+
+          <div class="container-graficos">
+        <p class="texto_ampliada1"> 
+        Aqui terá detalhes sobre o gráfico e a visualização de dados dispobilizada como API.
+        </p>
+        <div class="processamento_ampliado">
+        <div className='espaco-top'>
+              <Chart className='grafico1'
+                chartType={graficoFinal} 
+                data={data}
+                options={options}
+              />
+              
+                   </div>
+          </div>   
+        </div>
+
+        </div>
+     
+     
+          
+                      <footer class="cabeçalho_inferior">
+            <div class="container-creditos">
+                <p class="Texto_dos_creditos">
+                    Made by <span class="Texto_dos_creditos_destaque"> Projeto Magnólia </span>
+                </p>
+                    </div>
+                </footer>
                    </div>
           
         </div>
