@@ -21,17 +21,14 @@ header{
 
 .container-graficos{
     margin: auto;
-    margin-top: 100px;
+    margin-top: 300px;
     width: 984px;
-    height: 459px;
+    height: 700px;
     background-color: #E3E6EA;
 }
 .logo-imagem img{
-    width: 60px;
-    height: 60px;
-    margin-top: 5px;
-    margin-left: 0px;
-    border-radius: 15px;
+    width: 120px;
+    height: 75px;
 }
 .grafico{
     width: 300px;
@@ -81,8 +78,9 @@ header{
     border: 2px solid #1C4C96;
     border-radius: 10px;
 }
-.texto-header-pg {
+a.texto-header-pg {
     float: right;
+    text-decoration: none;
     margin-top: 20px;
     width: 160px;  
     border: none; 
@@ -94,7 +92,9 @@ header{
 }
 .texto-header {
     float: right;
+    text-decoration: none;
     margin-top: 20px;
+    margin-right: 13px;
     width: 80px;  
     border: none; 
     text-align: center;
@@ -107,13 +107,21 @@ header{
 .traco-pg {
     float: right;
     width: 165px;
-    height: 50px;
+    height: 70px;
+
+}
+
+.traco-header {
+    float: right;
+    width: 90px;
+    height: 70px;
 
 }
 
 .texto-traco1 {
     float: right;
     margin-top: 10px;
+    margin-right: 32%;
     width: 50px; 
     height: 4px;
     border: none; 
@@ -150,33 +158,92 @@ header{
 
 .container_secao{
     margin: auto;
-    margin-top: 200px;
+    margin-top: 100px;
     border-bottom: 1px solid #1C4C96;
     width: 984px;
-    height: 459px;
+    height: 450px;
     background-color: #E3E6EA;
+}
+
+.traco-vertical{
+    float: left;
+    margin-top: 5px;
+    margin-right: 1%;
+    width: 2px; 
+    height: 50px;
+    border: 2px solid #97BDF5;
+    border-radius: 3px;
+}
+
+.projeto-titulo{
+    font-style: normal;
+    font-weight:600;
+    font-size: 40px;
+    line-height: 48px;
+    color: #1C4C96;
+
 }
 
 .container-imagem_ampliada{
     margin: auto;
-    margin-top: 200px;
+    margin-top: 100px;
     border-bottom: 1px solid #1C4C96;
     width: 984px;
-    height: 800px;
+    height: 1250px;
     background-color: #E3E6EA;
+}
+.atualizar-botao{
+    float: left;
+    margin-top: 2px;
+    font-family: 'Inter', sans-serif;
+    width: 120px;
+    margin-left: 15px;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight:300;
+    background-color: #1565C0;
+    color: #ffffff;
+    border: 0px;
+    border-radius: 7px;
+    box-shadow: 1px 2px 2px black;
+}
+
+.atualizar-caixa{
+    float:left;
+    margin-left: 70px;
+    margin-top: 10px;
+    font-family: 'Inter', sans-serif;
+    width: 120px;
+    line-height: 27px;
+    font-size: 16px;
+    font-weight:300;
+    background-color: #ffffff;
+    border-radius: 7px;
 }
 
 .texto_ampliada1{
     float: left;
     margin-left: 50px;
-    margin-top: 75px;
+    margin-top: 50px;
     font-family: 'Inter', sans-serif;
     width: 420px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     line-height: 27px;
     font-size: 24px;
     font-weight:300;
     color: #1C4C96;
+}
+
+.espacamento_grafico{
+    float: left;
+    margin-top: 75px;
+}
+.espacamento_grafico2{
+    float: left;
+    margin-top: 20px;
+}
+.fim{
+    margin-top: 100px;
 }
 
 .texto_ampliada3{
@@ -185,7 +252,6 @@ header{
     margin-top: 10px;
     font-family: 'Inter', sans-serif;
     width: 420px;
-    margin-bottom: 40px;
     line-height: 27px;
     font-size: 20px;
     font-weight:300;
@@ -230,6 +296,11 @@ header{
     background-color: #E3E6EA;
 }
 
+.atualizar{
+    float: right;
+    width: 546px;
+    height: 200px;
+}
 .texto_Titulo_resultados{
     float: right;
     font-family: 'Inter', sans-serif;
@@ -238,29 +309,26 @@ header{
     font-weight:700;
     color: #1C4C96;
 }
-
-.texto_Descrição_resultados{
-    float: right;
+.centralizar{
+    margin-top: 35%;
+    margin-left: 35%;
     font-family: 'Inter', sans-serif;
-    width: 546px;
-    margin-top: 57px;
-    font-size: 24px;
-    font-weight:300;
-    color: #1C4C96;
+    width: 150px;
+    font-size: 20px;
+    font-weight:700;
 }
 
 .texto_Clique_resultados{
-    float: right;
-    font-family: 'Inter', sans-serif;
-    margin-top: 28px;
-    width: 546px;
+    text-decoration: none;
+    width: 300px;
     font-size: 24px;
-    font-weight:400;
+    font-weight:600;
     color: #1C4C96;
 }
 
-.texto_Clique_resultados_negrito{
-    font-weight:700;
+.texto_Clique_alinhado{
+    float: inline-end;
+    text-align: center;
 }
 
 .cabeçalho_inferior{
@@ -290,4 +358,5 @@ header{
 
 .Texto_dos_creditos_destaque{
     color: #ffffff;
+    text-decoration: none;
 }
