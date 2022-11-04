@@ -31,11 +31,11 @@ header{
     height: 75px;
 }
 .grafico{
-    width: 300px;
-    height: 180px;
+    width: 5000px;
+    height: 1000px;
 }
 .espaco-top{
-    margin-top: 10px;
+    margin-top: 60px;
 }
 
 .logo-meio img{
@@ -189,7 +189,7 @@ a.texto-header-pg {
     margin-top: 100px;
     border-bottom: 1px solid #1C4C96;
     width: 984px;
-    height: 1250px;
+    height: 2200px;
     background-color: #E3E6EA;
 }
 .atualizar-botao{
@@ -233,10 +233,28 @@ a.texto-header-pg {
     font-weight:300;
     color: #1C4C96;
 }
+.texto_ampliada5{
+    float: left;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-family: 'Inter', sans-serif;
+    width: 1000px;
+    margin-bottom: 20px;
+    line-height: 27px;
+    font-size: 24px;
+    font-weight:300;
+    color: #1C4C96;
+}
 
 .espacamento_grafico{
-    float: left;
+    float: right;
     margin-top: 75px;
+   
+}
+.espacamento_grafico_cima{
+    float: right;
+    margin-top: 75px;
+    width: 1000px;
 }
 .espacamento_grafico2{
     float: left;
@@ -266,7 +284,15 @@ a.texto-header-pg {
     background-color: #FFFF;
     border-radius: 10px;
 }
-
+.processamento_ampliado_grafico{
+    float: left;
+    margin-top: 20px;
+    width: 1000px;
+    height: 350px;
+    border: 1px solid #1C4C96;
+    background-color: #FFFF;
+    border-radius: 10px;
+}
 .texto_ampliada2{
     float: left;
     font-family: 'Inter', sans-serif;

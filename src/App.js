@@ -135,35 +135,35 @@ import axios from "axios";
               <div className='traco-vertical'></div>
               <p className='projeto-titulo'>API'S</p>
             </div>
-            <div className='espacamento_grafico'>
-              <p className="texto_ampliada1"> 
-                Gráfico comparativo da quantidade de Medidas provisórias em relação aos autores.
+            <div className='espacamento_grafico_cima'>
+              <p className="texto_ampliada5"> 
+                Gráfico comparativo da quantidade de Medidas Provisórias criadas nos últimos anos. 
               </p>
               <div className='texto_Clique_alinhado'>
                 <a className='texto_Clique_resultados' href="https://legis.senado.leg.br/dadosabertos/docs/resource_MateriaService.html">Clique aqui para utilizar a API.</a>
               </div>
             </div>
-            <div className="processamento_ampliado">
+            <div className="processamento_ampliado_grafico">
               <div className='espaco-top'>
-                <Chart className='grafico1'
-                  chartType={nome} 
-                  // chartType={graficoFinal} 
-                  data={data}
-                  options={options}
-                />
-              </div>
+                  <Chart className='grafico1'
+                    chartType={nome3} 
+                    data={data3}
+                    options={options}
+                  />
+              
+                </div>
             </div> 
 
             <div className="container-graficos">
-              <div className='espacamento_grafico'>
-                <p className="texto_ampliada1"> 
+              <div className='espacamento_grafico_cima'>
+                <p className="texto_ampliada5"> 
                   Gráfico que apresenta a comparação da quantidade de Medidas provisórias em cada situação.
                 </p>
                 <div className='texto_Clique_alinhado'>
                   <a className='texto_Clique_resultados' href="https://legis.senado.leg.br/dadosabertos/docs/resource_MateriaService.html">Clique aqui para utilizar a API.</a>
                 </div>
               </div> 
-              <div className="processamento_ampliado">
+              <div className="processamento_ampliado_grafico">
                 <div className='espaco-top'>
                   <Chart className='grafico1'
                    chartType={nome2} 
@@ -173,25 +173,25 @@ import axios from "axios";
                 </div>
               </div>   
        
-              <div className='espacamento_grafico'>
+              <div className='espacamento_grafico_cima'>
                 <div className='espacamento_grafico2'>
-                  <p className="texto_ampliada1"> 
-                    Gráfico comparativo da quantidade de Medidas Provisórias criadas nos últimos anos.
+                  <p className="texto_ampliada5"> 
+                    Gráfico comparativo da quantidade de Medidas provisórias em relação aos autores.  
                   </p>
                   <div className='texto_Clique_alinhado'>
                     <a className='texto_Clique_resultados' href="https://legis.senado.leg.br/dadosabertos/docs/resource_MateriaService.html">Clique aqui para utilizar a API.</a>
                   </div>
                 </div> 
               </div>
-              <div className="processamento_ampliado">
+              <div className="processamento_ampliado_grafico">
                 <div className='espaco-top'>
-                  <Chart className='grafico1'
-                    chartType={nome3} 
-                    data={data3}
-                    options={options}
-                  />
-              
-                </div>
+                <Chart className='grafico1'
+                  chartType={nome} 
+                  // chartType={graficoFinal} 
+                  data={data}
+                  options={options}
+                />
+              </div>
               </div>   
               <div className='espacamento_grafico'>
                 <p className='projeto-titulo'>Atualizar matérias</p>
