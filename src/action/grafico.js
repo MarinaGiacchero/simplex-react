@@ -42,7 +42,7 @@ if(data){
 function getDado(campo1, C1dependente, campo2, C2dependente, data){
     let graficoFinal='';
     if(((typeof campo1 == "string") || (typeof campo2 == "string")) && !data){
-            if(typeof campo1 == "string" && typeof campo2 == "string"){
+            if(typeof campo1 == "string" || typeof campo2 == "string"){ //era para ser && ao invés do ||
                 graficoFinal= 'PieChart';
             }else if(C1dependente || C2dependente){
                 graficoFinal= 'BarChart';

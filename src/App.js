@@ -1,11 +1,9 @@
 import Button from '@mui/material/Button';
 import React, { useState, useEffect } from "react";
-import { Component } from "react";
 import { Chart } from "react-google-charts";
 import logo from "./logo.png";
 import "./medicoes.css";
 import * as principal from "./action/grafico";
-import api from './config/configApi.js';
 import axios from "axios";
 
     function Aplica() {
@@ -35,6 +33,23 @@ import axios from "axios";
       const [nome3 , setNome3] = useState('');
 
        useEffect(() => {
+
+        // Tempo para atualizar automaticamente
+        var dezSegundos = 10000; // dez segundos em milissegundos
+        var quinzeSegundos = 15000;
+          function verificaHora() {
+              var agora = new Date();
+              var hoje = new Date(agora.getFullYear(), agora.getMonth(), agora.getDay());
+              var msDesdeMeiaNoite = agora.getTime() - hoje.getTime();
+              
+              if (msDesdeMeiaNoite < quinzeSegundos) {
+                axios.post(`/rest/atualizar/tramitar`).then(function(res) {
+                });
+              } 
+          }
+        setInterval(verificaHora, dezSegundos);
+
+        // Leitura do backend para pegar os dados do gráfico
         axios.all([axios.get(`/rest/autor/materia`), axios.get(`/rest/situacoes/materias`), axios.get(`/rest/materias/ano`)]).then(axios.spread((...res) => {
          //res1
         var arr1 = [['Autor', 'Quantidade'],    
@@ -75,19 +90,36 @@ import axios from "axios";
       }));
        }, []);
 
-      const [options, setOptions] = useState({
+      const [options] = useState({
         title: 'Gráfico'
       })
      
-      const [intervalo , setIntervalo] = useState('');
-      
-      const handleChange =(e)=>{
-        setIntervalo(e.target.value);
-      }
+
+      const handleClick = () => {
+
+         teste = 1;
+
+      };
+      var teste = 0;
       const handleSubmit=(e)=>{
-          alert('Foi atualizado as matérias.');
+  
+          // time que apertou o botão
+          function tempo() { 
+                   
+            // time que apertou o botão + tempo rodando = clear att  
+             axios.post(`/rest/materia`).then(function(res) {
+
+                });     
+                if(teste){
+                  clearInterval(att);
+                } 
+  
+          }
+        const att = setInterval(tempo, 5000);
+ 
+        alert('Foi acrescentado as matérias.');
         e.preventDefault();
-    
+        
       }
       return (
     <div className="App">
@@ -137,10 +169,10 @@ import axios from "axios";
             </div>
             <div className='espacamento_grafico'>
               <p className="texto_ampliada1"> 
-                Gráfico comparativo da quantidade de Medidas provisórias em relação aos autores.
+                Gráfico comparativo da quantidade de Medidas provisórias em relação aos autores com mais de 250 matérias.
               </p>
               <div className='texto_Clique_alinhado'>
-                <a className='texto_Clique_resultados' href="https://legis.senado.leg.br/dadosabertos/docs/resource_MateriaService.html">Clique aqui para utilizar a API.</a>
+                <a className='texto_Clique_resultados' href="http://localhost:8000/simplex/api-docs/">Clique aqui para utilizar a API.</a>
               </div>
             </div>
             <div className="processamento_ampliado">
@@ -157,17 +189,17 @@ import axios from "axios";
             <div className="container-graficos">
               <div className='espacamento_grafico'>
                 <p className="texto_ampliada1"> 
-                  Gráfico que apresenta a comparação da quantidade de Medidas provisórias em cada situação.
+                  Gráfico comparativo da quantidade de Medidas Provisórias criadas nos últimos anos.
                 </p>
                 <div className='texto_Clique_alinhado'>
-                  <a className='texto_Clique_resultados' href="https://legis.senado.leg.br/dadosabertos/docs/resource_MateriaService.html">Clique aqui para utilizar a API.</a>
+                  <a className='texto_Clique_resultados' href="http://localhost:8000/simplex/api-docs/">Clique aqui para utilizar a API.</a>
                 </div>
               </div> 
               <div className="processamento_ampliado">
                 <div className='espaco-top'>
                   <Chart className='grafico1'
-                   chartType={nome2} 
-                    data={data2}
+                   chartType={nome3} 
+                    data={data3}
                     options={options}
                   />
                 </div>
@@ -176,18 +208,18 @@ import axios from "axios";
               <div className='espacamento_grafico'>
                 <div className='espacamento_grafico2'>
                   <p className="texto_ampliada1"> 
-                    Gráfico comparativo da quantidade de Medidas Provisórias criadas nos últimos anos.
+                  Gráfico que apresenta a situação da maioria das Medidas provisórias.
                   </p>
                   <div className='texto_Clique_alinhado'>
-                    <a className='texto_Clique_resultados' href="https://legis.senado.leg.br/dadosabertos/docs/resource_MateriaService.html">Clique aqui para utilizar a API.</a>
+                    <a className='texto_Clique_resultados' href="http://localhost:8000/simplex/api-docs/">Clique aqui para utilizar a API.</a>
                   </div>
                 </div> 
               </div>
               <div className="processamento_ampliado">
                 <div className='espaco-top'>
                   <Chart className='grafico1'
-                    chartType={nome3} 
-                    data={data3}
+                    chartType={nome2} 
+                    data={data2}
                     options={options}
                   />
               
@@ -198,14 +230,10 @@ import axios from "axios";
                 <form onSubmit={(e) => {handleSubmit(e)}}>
                   <div className='atualizar'>
                     <label htmlFor="intervalo" className='texto_ampliada2'>
-                      Intervalo de matérias:
+                      Inserir as matérias:
                     </label><br/>
-                    <select id="intervalo" name="intervalo" className='atualizar-caixa'>
-                      <option value={intervalo} required onChange={(e) => {handleChange(e)}}>0 a 1000</option>
-                      <option value={intervalo} required onChange={(e) => {handleChange(e)}}>1001 a 2001</option>
-                      <option value={intervalo} required onChange={(e) => {handleChange(e)}}>2002 a 3002</option>
-                    </select>
                     <input type="submit" value="ATUALIZAR" className='atualizar-botao'/>
+                    <button onClick={handleClick} className='atualizar-caixa'>Parar</button>
                   </div>
                 </form>
               </div>
